@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { navItems } from "../../utils/data";
 import NavLogo from "./NavLogo";
 import NavSearch from "./NavSearch";
 import Navigation from "./Navigation";
@@ -16,7 +15,7 @@ const Navbar = () => {
 
       <NavSearch />
 
-      <Navigation items={navItems} />
+      <Navigation />
 
       <Link to="/checkout">
         <NavCart noOfItems={0} />

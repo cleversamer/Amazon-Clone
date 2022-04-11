@@ -1,4 +1,5 @@
-import { initializeApp } from "firebase";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, query, orderBy } from "firebase/firestore";
 
 const config = {
   apiKey: process.env["REACT_APP_FIREBASE_API_KEY"],
@@ -9,8 +10,14 @@ const config = {
   appId: "1:167025370472:web:9eb86e13f64309add662dd",
 };
 
-const app = initializeApp(config);
+initializeApp(config);
 
-const db = app.firestore();
+const db = getFirestore();
 
-export default db;
+const itemsRef = collection(db, "items");
+
+const navItemsRef = collection(db, "navItems");
+
+export const navItemsQuery = query(navItemsRef, orderBy("timestamp", "asc"));
+
+export const itemsQuery = query(itemsRef, orderBy("timestamp", "asc"));

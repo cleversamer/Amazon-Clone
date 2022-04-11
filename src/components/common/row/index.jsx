@@ -1,10 +1,11 @@
 import React from "react";
+import { genKey } from "../../../utils/services";
 import Product from "../../product";
 import "./index.css";
 
-const Row = ({ products }) => {
+const Row = ({ items }) => {
   const getClasses = () => {
-    const { length } = products;
+    const { length } = items;
     let classes = "row";
     if (length === 1) classes += " row--1";
     if (length === 2) classes += " row--2";
@@ -14,8 +15,8 @@ const Row = ({ products }) => {
 
   return (
     <section className={getClasses()}>
-      {products?.map((product) => (
-        <Product key={product.id} {...product} />
+      {items.map((item) => (
+        <Product key={genKey()} {...item} />
       ))}
     </section>
   );
