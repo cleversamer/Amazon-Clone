@@ -1,9 +1,9 @@
 import React from "react";
-import { genKey } from "../services";
-import { products } from "../data";
-import Banner from "./HomeBanner";
-import Row from "./HomeRow";
-import "../css/home.css";
+import { genKey } from "../../utils/services";
+import { products } from "../../utils/data";
+import Banner from "../common/banner";
+import Row from "../common/row";
+import "./index.css";
 
 const Home = () => {
   return (

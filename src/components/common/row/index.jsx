@@ -1,13 +1,14 @@
 import React from "react";
-import Product from "./Product";
+import Product from "../../product";
+import "./index.css";
 
-const HomeRow = ({ products }) => {
+const Row = ({ products }) => {
   const getClasses = () => {
     const { length } = products;
-    let classes = "home__row";
-    if (length === 1) classes += " home__row-1";
-    if (length === 2) classes += " home__row-2";
-    if (length === 3) classes += " home__row-3";
+    let classes = "row";
+    if (length === 1) classes += " row--1";
+    if (length === 2) classes += " row--2";
+    if (length === 3) classes += " row--3";
     return classes;
   };
 
@@ -20,4 +21,4 @@ const HomeRow = ({ products }) => {
   );
 };
 
-export default HomeRow;
+export default Row;

@@ -1,6 +1,6 @@
 import React from "react";
-import { genKey } from "../services";
-import "../css/product.css";
+import Stars from "../common/stars";
+import "./index.css";
 
 const Product = ({ id, title, price, rating, image }) => {
   return (
@@ -13,13 +13,7 @@ const Product = ({ id, title, price, rating, image }) => {
           <strong>{price}</strong>
         </p>
 
-        <div className="product__rating">
-          {Array(rating)
-            .fill()
-            .map(() => (
-              <p key={genKey()}>⭐</p>
-            ))}
-        </div>
+        <Stars className="product__rating" stars={rating} />
       </div>
 
       <img className="product__img" src={image} alt="Product" />

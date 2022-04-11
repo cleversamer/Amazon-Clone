@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { navItems } from "../data";
+import { navItems } from "../../utils/data";
 import NavLogo from "./NavLogo";
 import NavSearch from "./NavSearch";
 import Navigation from "./Navigation";
 import NavCart from "./NavCart";
-import "../css/navbar.css";
+import "./index.css";
 
 const Navbar = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import NotFound from "./components/NotFound";
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+import NotFound from "./components/common/not-found";
 import "./css/app.css";
 
 const App = () => {

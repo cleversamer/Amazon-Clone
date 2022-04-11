@@ -1,5 +1,5 @@
 import React from "react";
-import { genKey } from "../services";
+import { genKey } from "../../utils/services";
 import NavLink from "./NavLink";
 
 const Navigation = ({ items }) => {
