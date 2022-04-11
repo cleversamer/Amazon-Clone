@@ -7,6 +7,10 @@ html {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  background-color: #eaeded;
+}
+
 a {
   text-decoration: none !important;
   color: inherit !important;
@@ -16,7 +20,7 @@ ul {
   list-style: none;
 }
 
-button {
+.btn-none {
   border: none;
   outline: none;
   background: none;

@@ -19,7 +19,7 @@ const NavSearch = () => {
         placeholder="Search Amazon"
       />
 
-      <button type="submit" onClick={handleSearch}>
+      <button className="btn-none" type="submit" onClick={handleSearch}>
         <Search className="navbar__search-icon clickable" />
       </button>
     </form>

@@ -1,4 +1,5 @@
 import React from "react";
+import { genKey } from "../services";
 import NavLink from "./NavLink";
 
 const Navigation = ({ items }) => {
@@ -6,7 +7,7 @@ const Navigation = ({ items }) => {
     <ul className="navbar__navigation">
       {items?.map((item) => (
         <NavLink
-          key={Date.now() + item.line1}
+          key={genKey()}
           line1={item.line1}
           line2={item.line2}
           path={item.path || "/"}

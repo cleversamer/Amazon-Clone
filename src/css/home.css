@@ -1,0 +1,19 @@
+.home {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__row {
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 960px) {
+  .home__row {
+    flex-wrap: wrap;
+  }
+}
