@@ -6,7 +6,7 @@ Not live yet...
 
 ## Description
 
-Amazon Clone with React & Firebase
+Amazon Clone with React, Redux, and Firebase
 
 ## Getting Started
 
@@ -14,6 +14,15 @@ Amazon Clone with React & Firebase
 
 - React
 - React DOM
+- React Router DOM
+- React Redux
+- Redux
+- Reduxjs Toolkit
+- Redux Thunk
+- Reselect
+- MaterialUI Core
+- MaterialUI Icons
+- Firebase
 
 ### Installing
 
@@ -25,7 +34,7 @@ Amazon Clone with React & Firebase
 
 ## Help
 
-- You may face an issue when installing dependencies, so use `--force` to avoid any problems
+- No issues detected
 
 ## Authors
 
