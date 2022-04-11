@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavLogo from "./NavLogo";
 import NavSearch from "./NavSearch";
 import Navigation from "./Navigation";
-import NavCheckout from "./NavCheckout";
+import NavCart from "./NavCart";
 import "../css/navbar.css";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
       <Navigation />
 
       <Link to="/checkout">
-        <NavCheckout />
+        <NavCart />
       </Link>
     </nav>
   );

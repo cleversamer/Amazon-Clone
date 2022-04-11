@@ -1,7 +1,7 @@
 import React from "react";
 import { ShoppingBasket } from "@mui/icons-material";
 
-const NavCheckout = () => {
+const NavCart = () => {
   return (
     <div className="navbar__cart">
       <ShoppingBasket />
@@ -10,4 +10,4 @@ const NavCheckout = () => {
   );
 };
 
-export default NavCheckout;
+export default NavCart;

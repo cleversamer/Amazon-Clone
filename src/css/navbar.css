@@ -6,6 +6,7 @@
   color: #fff;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .navbar__logo {
@@ -44,6 +45,7 @@
   display: flex;
   justify-content: space-evenly;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .navbar__nav-link {
@@ -79,4 +81,45 @@
   font-size: 18px;
   font-weight: 700;
   color: #febd69;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: static;
+    justify-content: space-between;
+  }
+
+  .navbar__nav-option {
+    text-align: center;
+  }
+
+  .navbar__nav-option:hover,
+  .navbar__nav-option:active {
+    color: #fd9d21 !important;
+  }
+
+  .navbar__logo {
+    order: 0;
+  }
+
+  .navbar__cart {
+    order: 1;
+    padding-right: 10px;
+  }
+
+  .navbar__search {
+    order: 2;
+    min-width: 90vw;
+    max-width: 90vw;
+    margin-left: 5vw;
+  }
+
+  .navbar__navigation {
+    order: 3;
+    padding: 0;
+    min-width: 90vw;
+    max-width: 90vw;
+    margin-left: 5vw;
+    padding: 10px 0;
+  }
 }
