@@ -7,6 +7,12 @@ import NavCart from "./NavCart";
 import "../css/navbar.css";
 
 const Navbar = () => {
+  const navItems = [
+    { line1: "Hello,", line2: "Sign In", path: "/login" },
+    { line1: "returns", line2: "& Orders" },
+    { line1: "Your", line2: "Prime" },
+  ];
+
   return (
     <nav className="navbar">
       <Link to="/">
@@ -15,10 +21,10 @@ const Navbar = () => {
 
       <NavSearch />
 
-      <Navigation />
+      <Navigation items={navItems} />
 
       <Link to="/checkout">
-        <NavCart />
+        <NavCart noOfItems={0} />
       </Link>
     </nav>
   );

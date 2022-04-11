@@ -15,3 +15,10 @@ a {
 ul {
   list-style: none;
 }
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+}

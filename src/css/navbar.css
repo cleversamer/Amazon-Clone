@@ -98,6 +98,10 @@
     color: #fd9d21 !important;
   }
 
+  .navbar__nav-option-line1 {
+    opacity: 0.8;
+  }
+
   .navbar__logo {
     order: 0;
   }
