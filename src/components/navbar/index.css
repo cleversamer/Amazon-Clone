@@ -48,6 +48,10 @@
   text-transform: capitalize;
 }
 
+.navbar__navigation--loading {
+  padding-right: 40px;
+}
+
 .navbar__nav-link {
   text-transform: capitalize;
 }

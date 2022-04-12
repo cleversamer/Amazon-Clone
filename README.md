@@ -23,6 +23,7 @@ Amazon Clone with React, Redux, and Firebase
 - MaterialUI Core
 - MaterialUI Icons
 - Firebase
+- ChakraUI
 
 ### Installing
 
