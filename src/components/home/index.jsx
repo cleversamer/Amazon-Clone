@@ -4,10 +4,9 @@ import { onSnapshot } from "firebase/firestore";
 import { itemsQuery } from "../../firebase";
 import { addItems, getItems } from "../../store/items";
 import Banner from "../common/banner";
-import Row from "../common/row";
+import Rows from "../rows";
 import { Spinner } from "@chakra-ui/react";
 import "./index.css";
-import Rows from "../rows";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const Home = () => {
     onSnapshot(itemsQuery, (snapshot) => {
       const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       dispatch(addItems(data));
-      setLoading(false);
+      setTimeout(() => setLoading(false), 1000);
     });
   }, []);
 

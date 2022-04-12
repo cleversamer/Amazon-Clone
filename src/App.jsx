@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
+import Checkout from "./components/checkout";
 import NotFound from "./components/common/not-found";
 import "./css/app.css";
 
@@ -24,7 +25,7 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/checkout" element={<h1>Checkout Page</h1>} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<h1>Login Page</h1>} />
           <Route path="/home" element={<Home />} />
           <Route path="/not-found" element={<NotFound />} />

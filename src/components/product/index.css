@@ -13,10 +13,7 @@
   border-radius: 7px;
   cursor: pointer;
   transition: transform 0.3s ease-in;
-}
-
-.product:hover {
-  transform: scale(1.07);
+  box-shadow: 0px 0px 10px 1px rgba(68, 68, 68, 0.5);
 }
 
 .product__info {
@@ -36,16 +33,28 @@
   max-height: 200px;
   width: 100%;
   object-fit: contain;
+  margin-top: 30px;
   margin-bottom: 15px;
 }
 
 .product__btn {
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  border-radius: 20px;
   background-color: #f0c14b;
-  border: 1px solid;
-  border-color: #a88734 #9c7e31 #846a29;
+  color: #333;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .product__btn:active {
   transform: scale(0.97);
+}
+
+@media screen and (min-width: 768px) {
+  .product:hover {
+    transform: scale(1.04);
+  }
 }

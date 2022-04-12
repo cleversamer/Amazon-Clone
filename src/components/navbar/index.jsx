@@ -18,7 +18,7 @@ const Navbar = () => {
       <Navigation />
 
       <Link to="/checkout">
-        <NavCart noOfItems={0} />
+        <NavCart />
       </Link>
     </nav>
   );

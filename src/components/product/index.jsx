@@ -1,8 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItemToUserCart } from "../../store/user";
 import Stars from "../common/stars";
 import "./index.css";
 
 const Product = ({ id, title, price, rating, image }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToBasket = () => {
+    dispatch(addItemToUserCart(id));
+  };
+
   return (
     <article className="product">
       <div className="product__info">
@@ -18,7 +26,9 @@ const Product = ({ id, title, price, rating, image }) => {
 
       <img className="product__img" src={image} alt="Product" />
 
-      <button className="product__btn">Add to basket</button>
+      <button className="product__btn" onClick={handleAddToBasket}>
+        Add to basket
+      </button>
     </article>
   );
 };

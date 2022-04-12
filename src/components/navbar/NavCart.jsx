@@ -1,9 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { getUserCart } from "../../store/user";
 import { ShoppingBasket } from "@mui/icons-material";
 
-const NavCart = ({ noOfItems }) => {
+const NavCart = () => {
+  const cart = useSelector(getUserCart);
+
   const mapItems = () => {
-    const result = parseInt(noOfItems);
+    const result = parseInt(cart?.length);
     return isNaN(result) ? 0 : result;
   };
 

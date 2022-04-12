@@ -16,7 +16,7 @@ const Navigation = () => {
     onSnapshot(navItemsQuery, (snapshot) => {
       const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       dispatch(fetchNavItems(data));
-      setLoading(false);
+      setTimeout(() => setLoading(false), 1000);
     });
   }, []);
 
