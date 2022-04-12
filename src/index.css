@@ -26,3 +26,7 @@ ul {
   background: none;
   padding: 0;
 }
+
+.clickable {
+  cursor: pointer;
+}

@@ -7,15 +7,12 @@ import Home from "./components/home";
 import Checkout from "./components/checkout";
 import NotFound from "./components/common/not-found";
 import Login from "./components/login";
-import "./css/app.css";
 
 const store = configureStore();
 
 const App = () => {
   useEffect(() => {
-    const unsubscribe = store.subscribe(() => {
-      console.log("Store has changed!", store.getState());
-    });
+    const unsubscribe = store.subscribe(() => {});
 
     return () => {
       unsubscribe();
@@ -24,18 +21,16 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className="app">
-        <Navbar />
+      <Navbar />
 
-        <Routes>
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="*" element={<Navigate to="/not-found" replace />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/not-found" replace />} />
+      </Routes>
     </Provider>
   );
 };
