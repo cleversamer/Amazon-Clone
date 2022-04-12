@@ -4,7 +4,7 @@ import { createSelector } from "reselect";
 const slice = createSlice({
   name: "user",
   initialState: {
-    auth: {},
+    auth: null,
     cart: { length: 0, titles: [] },
   },
   reducers: {

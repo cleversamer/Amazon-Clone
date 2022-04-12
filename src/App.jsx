@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Checkout from "./components/checkout";
 import NotFound from "./components/common/not-found";
+import Login from "./components/login";
 import "./css/app.css";
 
 const store = configureStore();
@@ -28,7 +29,7 @@ const App = () => {
 
         <Routes>
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/login" element={<h1>Login Page</h1>} />
+          <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
