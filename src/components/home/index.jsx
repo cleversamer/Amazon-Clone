@@ -7,6 +7,7 @@ import Banner from "../common/banner";
 import Row from "../common/row";
 import { Spinner } from "@chakra-ui/react";
 import "./index.css";
+import Rows from "../rows";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Home = () => {
           <Spinner size="xl" />
         </div>
       ) : (
-        items.map((row) => <Row key={row.id} items={row.itemsList} />)
+        <Rows items={items} />
       )}
     </div>
   );
