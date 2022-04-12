@@ -16,7 +16,7 @@ const Row = ({ items }) => {
   return (
     <section className={getClasses()}>
       {items.map((item) => (
-        <Product key={genKey()} {...item} />
+        <Product key={genKey()} item={item} />
       ))}
     </section>
   );

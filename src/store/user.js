@@ -5,7 +5,7 @@ const slice = createSlice({
   name: "user",
   initialState: {
     auth: {},
-    cart: [],
+    cart: { length: 0, titles: [] },
   },
   reducers: {
     userAuthenticated: (user, action) => {
@@ -13,24 +13,62 @@ const slice = createSlice({
     },
 
     itemAddedToUserCart: (user, action) => {
-      user.cart.push(action.payload.data);
+      const item = action.payload.data;
+      let length = isNaN(user.cart[item.title]?.length)
+        ? 0
+        : user.cart[item.title]?.length;
+      length++;
+      user.cart[item.title] = { item, length };
+      user.cart.length++;
+
+      const index = user.cart.titles.indexOf(item.title);
+      if (index === -1) {
+        user.cart.titles.push(item.title);
+      }
     },
 
     itemRemovedFromUserCart: (user, action) => {
-      user.cart = user.cart.filter((item) => item.id !== action.payload.id);
+      const { length } = user.cart[action.payload.id];
+      delete user.cart[action.payload.id];
+      user.cart.length -= length;
+      user.cart.titles = user.cart.titles.filter(
+        (title) => title !== action.payload.id
+      );
+    },
+
+    itemReducedFromUserCart: (user, action) => {
+      const { length } = user.cart[action.payload.id];
+      if (length > 1) {
+        user.cart[action.payload.id].length--;
+        user.cart.length--;
+      } else {
+        const { length } = user.cart[action.payload.id];
+        delete user.cart[action.payload.id];
+        user.cart.length -= length;
+        user.cart.titles = user.cart.titles.filter(
+          (title) => title !== action.payload.id
+        );
+      }
     },
   },
 });
 
-const { userAuthenticated, itemAddedToUserCart, itemRemovedFromUserCart } =
-  slice.actions;
+const {
+  userAuthenticated,
+  itemAddedToUserCart,
+  itemRemovedFromUserCart,
+  itemReducedFromUserCart,
+} = slice.actions;
 
 export const authUser = (user) => userAuthenticated({ data: user });
 
 export const addItemToUserCart = (item) => itemAddedToUserCart({ data: item });
 
-export const removeItemFromUserCart = (itemId) =>
-  itemRemovedFromUserCart({ id: itemId });
+export const removeItemFromUserCart = (title) =>
+  itemRemovedFromUserCart({ id: title });
+
+export const reduceItemFromUserCart = (title) =>
+  itemReducedFromUserCart({ id: title });
 
 export const getUserAuth = () =>
   createSelector(

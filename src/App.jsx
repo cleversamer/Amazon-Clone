@@ -12,7 +12,9 @@ const store = configureStore();
 
 const App = () => {
   useEffect(() => {
-    const unsubscribe = store.subscribe(() => {});
+    const unsubscribe = store.subscribe(() => {
+      console.log("Store has changed!", store.getState());
+    });
 
     return () => {
       unsubscribe();
