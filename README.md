@@ -39,7 +39,7 @@ Amazon Clone with React, Redux, and Firebase
 
 ## Authors
 
-- [Samer A.](https://twitter.com/ssadawi__)
+Authored by [Samer A.](https://cleversamer.web.app/)
 
 ## Version History
 
